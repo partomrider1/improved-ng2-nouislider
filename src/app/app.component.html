@@ -1,0 +1,17 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:center">
+  <h1>
+    Improved ng2-nouislider demo with dynamic form
+  </h1>
+</div>
+<div *ngIf="demoForm">
+  <form [formGroup]="demoForm" (ngSubmit)="submitSearch()" autocomplete="off">
+    <div>
+      <app-slider [min]="yearRange[0]" [max]="yearRange[1]" [step]="1" [controlInput]="demoForm.controls.yearRange.value" formControlName="yearRange"></app-slider>
+    </div>
+    <div>
+      <button id="reset" (click)="resetForm();"> RESET </button>
+      <button id="submit" type="submit"> SUBMIT </button>
+    </div>
+  </form>
+</div>
