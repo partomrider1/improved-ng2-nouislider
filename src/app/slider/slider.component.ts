@@ -4,7 +4,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

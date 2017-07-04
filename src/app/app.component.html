@@ -1,17 +1,30 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Improved ng2-nouislider demo with dynamic form
-  </h1>
-</div>
-<div *ngIf="demoForm">
-  <form [formGroup]="demoForm" (ngSubmit)="submitSearch()" autocomplete="off">
-    <div>
-      <app-slider [min]="yearRange[0]" [max]="yearRange[1]" [step]="1" [controlInput]="demoForm.controls.yearRange.value" formControlName="yearRange"></app-slider>
+<div class = "container">
+  <div style="text-align:center">
+    <h1>
+      Improved ng2-nouislider demo with dynamic form
+    </h1>
+  </div>
+  <div *ngIf="demoForm" class = "row" style = "margin-top: 90px;">
+    <form [formGroup]="demoForm" (ngSubmit)="submitSearch()" autocomplete="off">
+      <div class = "row" style = "margin: 5px; padding: 5px;">
+        <label class="col-md-offset-5 col-md-4">{{demoForm.controls.yearRange.value | split}}</label>
+      </div>
+      <div class = "row" style = "margin: 5px; padding: 5px;">
+        <label class = "text-right col-md-2" style = "margin-top: 5px;">{{yearRange[0]}}</label>
+        <app-slider [min]="yearRange[0]" [max]="yearRange[1]" [step]="1" [controlInput]="demoForm.controls.yearRange.value" formControlName="yearRange"></app-slider>
+        <label class = "text-left col-md-2" style = "margin-top: 5px;">{{yearRange[1]}}</label>
+      </div>
+      <div class = "text-center row" style = "margin: 5px; padding-top: 50px;">
+        <button class="btn btn-default" id="reset" (click)="resetForm();"> RESET </button>
+        <button class="btn btn-success" id="submit" type="submit"> SUBMIT </button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf ="formValues" class = "row" style = "padding: 6px; margin-top: 30px; background: #f6f6d9; border: 1px dashed">
+    <h4>OnSubmit Form Object: </h4>
+    <div class = "text-center">
+      <label>{{formValues}}</label>
     </div>
-    <div>
-      <button id="reset" (click)="resetForm();"> RESET </button>
-      <button id="submit" type="submit"> SUBMIT </button>
-    </div>
-  </form>
+  </div>
 </div>

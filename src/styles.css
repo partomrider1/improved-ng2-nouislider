@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+nouislider .noUi-horizontal {
+  height: 2px;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+nouislider .noUi-horizontal:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  background-color: #d3d3d3;
+  width: 100%;
+  height: 1px;
+}
+nouislider .noUi-horizontal .noUi-base .noUi-origin .noUi-handle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  box-shadow: none;
+  border-color: #01ACDD;
+  border-width: 2px;
+  outline: none;
+}
+nouislider .noUi-horizontal .noUi-base .noUi-origin .noUi-handle:after,
+nouislider .noUi-horizontal .noUi-base .noUi-origin .noUi-handle:before {
+  background: transparent;
+}
+nouislider .noUi-horizontal .noUi-base .noUi-connect {
+  top: 6px;
+  height: 2px;
+  background: #01ACDD;
+}

@@ -10,6 +10,7 @@ export class AppComponent {
   demoForm: FormGroup;
   yearRange: number[] = [1990, 2017];
   isReset: boolean = false;
+  formValues: any;
   constructor(private _fb: FormBuilder){
 
   }
@@ -30,7 +31,7 @@ export class AppComponent {
       this.isReset = false;
     }
     else{
-      console.log('Submission successful');
+      this.formValues = JSON.stringify(this.demoForm.value, null, 4);
     }
   }
 
